@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: beiew_dev
+    image: postgres:15.4
+    ports:
+      - "15432:5432"
+    environment:
+      - POSTGRES_PASSWORD=beiew
+      - POSTGRES_USER=beiew
+      - POSTGRES_DB=beiew
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
